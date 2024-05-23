@@ -27,10 +27,9 @@ class CustomIcon extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        margin: const EdgeInsets.all(10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           color: bgColor,
         ),
         child: SvgPicture.asset(
