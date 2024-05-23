@@ -11,15 +11,4 @@ class AppColor {
   static const Color secondaryColor = Color(0xFFF5EEF8);
 
   static const Color transparentColor = Colors.transparent;
-
-  // Gradient Color for background
-  // static const LinearGradient gradientBackgroundColor = LinearGradient(
-  //   begin: Alignment.topLeft,
-  //   end: Alignment.bottomRight,
-  //   colors: [
-  //     bgPrimaryColor,
-  //     bgSecondaryColor,
-  //     bgPrimaryColor,
-  //   ],
-  // );
 }
