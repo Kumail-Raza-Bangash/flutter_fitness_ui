@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fitness_ui/resources/app_color.dart';
+import 'package:flutter_fitness_ui/view/widgets/custom_icon.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,6 +25,15 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: CustomIcon(
+          onTap: () {},
+          svgPath: "assets/icons/arrow.svg",
+          height: 30,
+          width: 30,
+          bgColor: AppColor.secondaryColor,
+          svgHeight: 20,
+          svgWidth: 20,
+        ),
       ),
     );
   }
