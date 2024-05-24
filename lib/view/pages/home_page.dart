@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_fitness_ui/models/category_model.dart';
 import 'package:flutter_fitness_ui/resources/app_color.dart';
 import 'package:flutter_fitness_ui/view/widgets/custom_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,8 +12,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<CategoryModel> categorie = [];
+
+  void _getCategory() {
+    categorie = CategoryModel.getCategories();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getCategory();
     return Scaffold(
       appBar: _appBar(),
       backgroundColor: AppColor.whiteColor,
@@ -22,34 +29,77 @@ class _HomePageState extends State<HomePage> {
         children: [
           _searchField(),
           const SizedBox(height: 40),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Category",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 15),
-              Container(
-                height: 150,
-                color: Colors.green,
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return Container();
-                  },
-                ),
-              ),
-            ],
-          )
+          _categorySection(),
         ],
       ),
+    );
+  }
+
+  Column _categorySection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
+            "Category",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            separatorBuilder: (context, index) => const SizedBox(width: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            itemCount: categorie.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return Container(
+                width: 100,
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: categorie[index].boxColor.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 70,
+                      width: 70,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColor.primaryColor,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SvgPicture.asset(
+                          categorie[index].iconPath,
+                          height: 60,
+                          width: 60,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      categorie[index].name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: AppColor.blackColor,
+                        fontSize: 15,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
