@@ -47,7 +47,7 @@ class PopularDietModel {
         level: 'Medium',
         duration: '44 min',
         calorie: '470 kCal',
-        viewIsSelected: true,
+        viewIsSelected: false,
       ),
     );
 
