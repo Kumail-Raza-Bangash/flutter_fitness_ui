@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_fitness_ui/resources/app_color.dart';
 import 'package:flutter_fitness_ui/view/widgets/custom_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,8 +18,36 @@ class _HomePageState extends State<HomePage> {
       appBar: _appBar(),
       backgroundColor: AppColor.whiteColor,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _searchField(),
+          const SizedBox(height: 40),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 20.0),
+                child: Text(
+                  "Category",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              Container(
+                height: 150,
+                color: Colors.green,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Container();
+                  },
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
