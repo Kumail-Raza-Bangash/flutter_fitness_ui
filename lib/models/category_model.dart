@@ -19,7 +19,7 @@ class CategoryModel {
       CategoryModel(
         name: "Salad",
         iconPath: "assets/images/salad.png",
-        boxColor: AppColor.secondaryColor,
+        boxColor: AppColor.primaryColor,
       ),
     );
 
@@ -35,7 +35,7 @@ class CategoryModel {
       CategoryModel(
         name: "Pie",
         iconPath: "assets/images/pie.png",
-        boxColor: AppColor.secondaryColor,
+        boxColor: AppColor.greyColor,
       ),
     );
 
@@ -43,7 +43,7 @@ class CategoryModel {
       CategoryModel(
         name: "Smoothies",
         iconPath: "assets/images/smoothies.png",
-        boxColor: AppColor.secondaryColor,
+        boxColor: AppColor.primaryColor,
       ),
     );
 

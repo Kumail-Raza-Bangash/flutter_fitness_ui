@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fitness_ui/models/category_model.dart';
 import 'package:flutter_fitness_ui/resources/app_color.dart';
 import 'package:flutter_fitness_ui/view/widgets/custom_icon.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_img/flutter_img.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 width: 100,
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: categorie[index].boxColor.withOpacity(0.5),
+                  color: categorie[index].boxColor.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: SvgPicture.asset(
+                        child: Img(
                           categorie[index].iconPath,
                           height: 60,
                           width: 60,
@@ -121,50 +121,60 @@ class _HomePageState extends State<HomePage> {
       ),
       child: TextField(
         decoration: InputDecoration(
-            filled: true,
-            hintText: "Search ",
-            hintStyle: const TextStyle(
-              color: AppColor.greyColor,
-              fontSize: 15,
+          filled: true,
+          hintText: "Search",
+
+          hintStyle: const TextStyle(
+            color: AppColor.greyColor,
+            fontSize: 15,
+          ),
+          // prefixIcon: const Padding(
+          //   padding: EdgeInsets.all(15),
+          //   child: Img(
+          //     "assets/icons/search.svg",
+          //     height: 15,
+          //     width: 15,
+          //   ),
+          // ),
+          prefixIcon: const SizedBox(
+            width: 50,
+            child: Img(
+              "assets/icons/search.svg",
+              height: 15,
+              width: 15,
             ),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.all(15),
-              child: SvgPicture.asset(
-                "assets/icons/search.svg",
-                height: 10,
-                width: 10,
+          ),
+          suffixIcon: const SizedBox(
+            width: 100,
+            child: IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  VerticalDivider(
+                    color: AppColor.blackColor,
+                    thickness: 0.1,
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: Img(
+                      "assets/icons/filter.svg",
+                      height: 20,
+                      width: 20,
+                    ),
+                  ),
+                ],
               ),
             ),
-            suffixIcon: SizedBox(
-              width: 100,
-              child: IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const VerticalDivider(
-                      color: AppColor.blackColor,
-                      thickness: 0.1,
-                      indent: 10,
-                      endIndent: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            fillColor: AppColor.whiteColor,
-            contentPadding: const EdgeInsets.all(15),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide.none,
-            )),
+          ),
+          fillColor: AppColor.whiteColor,
+          contentPadding: const EdgeInsets.symmetric(vertical: 15),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide.none,
+          ),
+        ),
       ),
     );
   }
