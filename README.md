@@ -2,15 +2,8 @@
 
 A new Flutter project.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![flutter_fitness_ui_01](https://github.com/Kumail-Raza-Bangash/flutter_fitness_ui/assets/60749099/598a237c-4a76-44b2-8096-cbebfbb80162)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![flutter_fitness_ui_02](https://github.com/Kumail-Raza-Bangash/flutter_fitness_ui/assets/60749099/374794b0-ef8e-4d56-a3e0-2c212f0db490)
