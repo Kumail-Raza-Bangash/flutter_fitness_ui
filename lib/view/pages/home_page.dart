@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                           "View",
                           style: TextStyle(
                             color: diet[index].viewIsSelected
-                                ? AppColor.whiteColor
+                                ? AppColor.greyColor
                                 : AppColor.blackColor,
                           ),
                         ),
